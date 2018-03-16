@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0027)https://ib.bki.ir/pid50.lmx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="description" content="بانکداری دیجیتالی بانک کشاورزی"><meta name="keywords" content="بانکداری دیجیتالی بانک کشاورزی"><meta name="author" content="author"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <script type="text/javascript" language="javascript" src="./false_files/script.js.download"></script>
+
+    <script language="javascript" type="text/javascript" src="./false_files/jquery-1.11.3.min.js.download"></script>
+    <script language="javascript" type="text/javascript" src="./false_files/jquery.mask.min.js.download"></script>
+
+    <script src="./false_files/jquery.ticker.js.download" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript" src="./false_files/bootstrap.min.js.download"></script>
+    <!--[if !IE]><!-->
+    <link href="./false_files/bootstrap-rtl.min.css" rel="stylesheet">
+    <link href="./false_files/style.css" rel="stylesheet">
+    <link href="./false_files/farsi.css" rel="stylesheet">
+    <link href="./false_files/overwritebs.css" rel="stylesheet">
+    <link href="./false_files/green.css" rel="stylesheet">
+    <link href="./false_files/ResultTable.css" rel="stylesheet">
+    <!--<![endif]-->
+    <!--[if gte IE 8]>
+    <link href='ThemeFa/bootstrap/css/bootstrap-rtl.min.css' rel='stylesheet' />
+    <link href='ThemeFa/css/style.css' rel='stylesheet' />
+    <link href='ThemeFa/css/overwritebs.css' rel='stylesheet' />
+    <link href='ThemeFa/green/green.css' rel='stylesheet' />
+    <link href='ThemeFa/css/ResultTable.css rel='stylesheet' />
+    <![endif]-->
+    <!--[if IE 8]>
+    <script type="text/javascript" src="ThemeFa/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link href='ThemeFa/css/reset.css' rel='stylesheet' />
+    <link href='ThemeFa/css/style-ie7.css' rel='stylesheet' />
+    <link href='ThemeFa/green/green-ie7.css' rel='stylesheet' />
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" media="screen" href="ie6Fix/ie.css" />    
+    <![endif]-->
+
+    
+
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+            //$('#name').bind('keyup', {chars: 10}, countChars23);
+            $("#spnUserInfo").bind('click', displayUserInfo);
+            $("#spnContactUs").bind('click', displayContactInfo);
+            $("#userInfoClose").bind('click', displayUserInfo);
+            $("#contactUsClose").bind('click', displayContactInfo);
+
+            function displayContactInfo() {
+                if ($('#contactUs').css('display') == 'none')
+                    $("#contactUs").fadeIn(300)
+                else $("#contactUs").fadeOut(300)
+            }
+
+            function displayUserInfo() {
+                if ($('#userInfo').css('display') == 'none')
+                    $("#userInfo").fadeIn(300)
+                else $("#userInfo").fadeOut(300)
+            }
+
+            $(".hMainMenu .mainMenu").bind('click', displaySubMenu);
+            function displaySubMenu() {
+            alert(1)
+                var a = $(".mainMenu.selected")
+                $(a).removeClass('selected')
+                $(a).next().css({ "display": "none" })
+                $(".selectedRightBg").parent().remove()
+                $(".selectedLeftBg").parent().remove()
+
+                $(this).next().css({ "display": "block" })
+                //$(this).addClass('selected')
+                //$(this).parent().before("<li><span class='selectedRightBg'></span></li>");
+                //$(this).parent().after("<li><span class='selectedLeftBg'></span></li>");
+                selectMainMenu(this, $(this).attr("mul"))
+            }
+
+            function selectMainMenu(ob) {
+                $(ob).addClass('selected')
+                $(ob).parent().before("<li><span class='selectedRightBg'></span></li>");
+                $(ob).parent().after("<li><span class='selectedLeftBg'></span></li>");
+            }
+
+            //            var flag = false
+            $(".hMainMenu ul li").each(function() {
+                var ul = $(this).find('ul:first')
+                if (ul.length > 0 && ul.children("li").length == 0) {
+                    $(this).css("display", "none")
+                    var next = $(this).next()
+                    if ($(next).hasClass('mainSep'))
+                        $(next).css({ "display": "none" })
+                }
+                else {
+                    var x = $(ul).find('li').hasClass('selected')
+                    if (x) {
+                        $(ul).css({ display: 'block' });
+                        //flag = true
+                        var li = $(ul).parent()
+                        var a = $(ul).prev()
+                        if (a.hasClass('mainMenu')) a.addClass('selected')
+                        li.before("<li><span class='selectedRightBg'></span></li>");
+                        li.after("<li><span class='selectedLeftBg'></span></li>");
+                    }
+                }
+            }
+            );
+            //            if (flag == false) {
+            //                $(".hMainMenu .first").addClass('selected')
+            //                $(".hMainMenu .first").parent().before("<li><span class='selectedRightBg'></span></li>");
+            //                $(".hMainMenu .first").parent().after("<li><span class='selectedLeftBg'></span></li>");
+            ////              selectMainMenu(".hMainMenu .first")
+            //                $("#hMenuContainer").css({ "padding-bottom": "5px" })
+            //            }
+
+
+
+        });
+
+        
+    </script>
+
+    
+
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"><title>
+	
+        سامانه بانکداري ديجيتالي بانک کشاورزي
+</title><link href="https://ib.bki.ir/favicon.ico" rel="shortcut icon" type="image/x-icon"></head>
+<body>
+    <form method="post" action="https://ib.bki.ir/pid50.lmx" id="form1" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="cs94WI0DYakXpgJDMmayILoezIEk8mRoy015cCgEKDmq4isUs+OGiKZ4LGF+Gw2oYKy5dW8CWbwaTuIWGiG5i6swi5m8r2bbOPOVsGkPNxeiYwOzQK3qddtp418STTZ7Xgti/DiiOvnI1haQyKPAR1L0ADzY0NJ2GGoOBtRMOaWai4BXRJh8lmYbVc9QFDWh7633Z0uC8MUjQPerSHS3k+QvFn7NPtR3sh9ZA3sYoABTIGyBTtGoDtGW/UvBCsG8wiGFyEF2wAi5O15GxtzUAuIDJ+fuyUJZCDaEB30LrGIwN0Cp">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./false_files/WebResource.axd" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D03DE577">
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0">
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="284">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="TO6mMFpMYcIgkgjjQRz85w00GknHVFYgHsHgW8OhF55SF7JjPZn1RxvEhb0YW4aTdB6Y3xGL5Fb4gLc/K8Yjyc7rrmAnNM3WMY9ofMtHOzLChBwNghwvQ56zlG1ApeNLqcYrR7+ndbPGInzBzxx+qaZs3Yl3iKeKmEfEK8wxhaNZJAi20pZttBkKIpwQ/49ha9WnqIjWjZ6Yi7BzCKwgb49qjs/Dk6b0sb1Z1qgwRNDxXHnZyYlF5BMon6HG8C0lKRG28oSmdvE06fSE2rzFai3HFpVqHQfq/UeExqnK/bDnnVGXKTwtB1zHrHg8GrEoFKcs+4VJFm3sg8wnse2GC6GJzBPXYSuFm9KinGH8xNDwRm5ElG0KvAhnxRzIX2+0aEDty5wVCoZXj3PQL4DD6XprN90=">
+</div>
+    <div id="wrapper" class="container-fluid">
+        <div id="LogoWrapper">
+            <div id="logo" class="logoBorder">
+                <div class="logo hidden-xs">
+                    <img src="./false_files/dbanklogo.png" id="ImgLogo" height="89" width="329" title="">
+                </div>
+                
+                <div>
+                    
+                    <div>
+                     
+                        
+                    </div>
+                    
+                    <div id="toHome" class="logout">
+                        <a href="https://ib.bki.ir/pid2.lmx">
+                        <img title="صفحه اصلي" alt="صفحه اصلي" src="./false_files/home.png" width="32px" height="32px"> <span>صفحه ورود به بانکداري ديجيتالي بانک کشاورزي</span></a>                    
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div id="MenuWrapper">            
+            <div id="hMenuContainer">
+                
+                <!--WOLogin-->
+                
+<nav role="navigation" class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">منو</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid50.lmx#">
+                    <span id="CardMenu_Label94">خدمات کارت</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    
+                    <li><a href="https://ib.bki.ir/pid112.lmx">
+                        <span id="CardMenu_Label23">سامانه پیوند بانک مرکزی</span></a>
+                    </li>
+                    
+                    <li>
+                        
+                        <a target="_blank" href="https://opg.bki.ir/">
+                        <span id="CardMenu_Label17">کمک های مردمی</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid46.lmx">
+                        <span id="CardMenu_Label18">مانده کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid97.lmx">
+                        <span id="CardMenu_Label10">موجودی حساب های متصل به کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid48.lmx">
+                        <span id="CardMenu_Label11">ده گردش آخر کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid92.lmx">
+                        <span id="CardMenu_Label9">30 گردش آخر حساب</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid95.lmx">
+                        <span id="CardMenu_Label14">میانگین حساب های متصل به کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid49.lmx">
+                        <span id="CardMenu_Label88">مسدودی کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid43.lmx">
+                        <span id="CardMenu_Label89">انتقال وجه کارت به کارت</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid96.lmx">
+                        <span id="CardMenu_Label15">پیگیری دسته چک</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid94.lmx">
+                        <span id="CardMenu_Label13">بازپرداخت اقساط تسهیلات</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid91.lmx">
+                        <span id="CardMenu_Label5">بازپرداخت اقساط مرابحه</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid47.lmx">
+                        <span id="CardMenu_Label90">پرداخت قبض کارتی</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid11.lmx">
+                        <span id="CardMenu_Label3">استعلام قبض</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid50.lmx">
+                        <span id="CardMenu_Label91">خرید شارژ تلفن همراه</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid99.lmx">
+                        <span id="CardMenu_Label16">شارژ مستقیم تلفن همراه</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid51.lmx">
+                        <span id="CardMenu_Label92">سه شارژ آخر خریداری شده</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid50.lmx#">
+                    <span id="CardMenu_Label95">سایر</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    
+                    <li><a href="https://ib.bki.ir/pid124.lmx">
+                        <span id="CardMenu_Label26">فعالسازی و مدیریت همراه بانک</span></a>
+                    </li>
+                    
+
+                    <li><a target="_blank" href="https://opg.bki.ir/">
+                        <span id="CardMenu_Label28">واریز وجوه به حساب سازمان ها از طریق کارت های عضو شتاب</span></a>
+                    </li>
+
+                    <li><a href="https://ib.bki.ir/pid40.lmx">
+                        <span id="CardMenu_Label93">مشاهده شماره شبا</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid11.lmx">
+                        <span id="CardMenu_Label96">استعلام قبض</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid83.lmx">
+                        <span id="CardMenu_Label1">بانکداری دیجیتالی در یک نگاه</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid81.lmx">
+                        <span id="CardMenu_Label2">نحوه درخواست بانکداری دیجیتالی</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid82.lmx">
+                        <span id="CardMenu_Label4">سوالات متداول</span></a>
+                    </li>
+                    <li><a href="https://carddis.bki.ir/">
+                        <span id="CardMenu_Label19">سامانه ثبت و پیگیری مغایرت های کارتی</span></a>
+                    </li>
+                    <li><a href="https://ipg.bki.ir/">
+                        <span id="CardMenu_Label20">درخواست درگاه پرداخت اینترنتی</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid55.lmx">
+                        <span id="CardMenu_Label22">استعلام اصالت ضمانتنامه - روش اول</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid103.lmx">
+                        <span id="CardMenu_Label21">استعلام اصالت ضمانتنامه - روش دوم</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid106.lmx">
+                        <span id="CardMenu_Label24">استعلام صندوق یکم</span></a>
+                    </li>
+                    
+                    <li><a href="https://ib.bki.ir/pid115.lmx">
+                        <span id="CardMenu_Label25">استعلام پورتفوی بورس</span></a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid50.lmx#">
+                    <span id="CardMenu_Label6">پروفایل همراه</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="https://ib.bki.ir/pid75.lmx">
+                        <span id="CardMenu_Label7">ایجاد پروفایل بر اساس شماره تلفن همراه</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid85.lmx">
+                        <span id="CardMenu_Label8">غیرفعالسازی پروفایل همراه</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+                <!--end WOLogin-->
+                
+            </div>
+        </div>
+        
+        <div class="main container" id="SubHolderIdEVoucher">
+            <div class="content col-md-12 col-sm-12">
+                
+                
+                <div id="ContentPlaceHolder1_divContent" class="content">
+                    <div class="boxtop">
+                        <div class="boxTitle">
+                            <span>درگاه پرداخت بانک کشاورزی</span>
+                        </div>
+                        <div class="boxCorner">
+                        </div>
+                    </div>
+                    <div id="ContentPlaceHolder1_divParamResult" class="paramresult">
+
+                        <ul id="ContentPlaceHolder1_params" class="param">
+                            <li>
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+                        <div class="centerblock">
+                            <span id="ContentPlaceHolder1_lblAlert" class="lblAlert">اطلاعات وارد شده صحیح نمی باشد  خطای رمز دوم</span>
+                        </div>
+                    </div>
+                    <div class="centerblock">
+                        <span id="ContentPlaceHolder1_lblAlert" class="lblAlert">مشتری گرامی، در صورت مشاهده خطای رمز دوم در تراکنش های کارتی، علت آن ممکن است استفاده از رمزهای ساده باشد. طبق دستورالعمل جدید بانک مرکزی مبنی بر عدم پذیرش رمزهای ساده، لطفا از طریق دستگاه های خودپرداز بانک کشاورزی نسبت به تغییر رمز دوم اقدام نمایید.</span>
+                    </div>
+                </div>
+
+    </div>
+
+
+            </div>
+
+
+
+            <!--begin of ServiceIntroBox-->
+            
+            <!--end of ServiceIntroBox-->
+        </div>
+        <!--end of main-->
+        
+        
+              
+          
+        <div class="footer hidden-sm hidden-xs">
+            <span id="spnContactUs" class="grinValue cursorpointer">
+                <img width="15" height="15" title="" class="cursorpointer" alt="بستن" src="./false_files/tel.gif">
+                <span id="Label48">مرکز ارتباط سبز</span></span>
+            ©
+            
+            <span id="Label47">کلیه حقوق این سایت متعلق به بانک کشاورزی می باشد.</span>
+            <div class="contactUs displaynone" id="contactUs">
+                <img id="contactUsClose" width="16" height="16" title="بستن" class="cursorpointer fr" alt="بستن" src="./false_files/close.gif" complete="complete" style="padding: 5px 8px 0 0">
+                <ul class="clear">
+                    <li><span>مرکز ارتباط سبز:</span></li>
+                    <li><span>88287070 يا 81301</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--wrapper--> 
+    <div id="BackgroundPopupWrapper">
+    <div id="backgroundPopup"> </div> <div id="backgroundPopupImg"> <img src="./false_files/preloading.gif" width="150px" height="60px" alt="در
+    حال بارگذاري" title="در حال بارگذاري"> </div> 
+    </div>
+    <!--end-->
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+
+theForm.oldOnLoad = window.onload;
+window.onload = WebForm_RestoreScrollPosition;
+//]]>
+</script>
+</form>
+    <div id="TimerWrapper">
+        <form action="https://ib.bki.ir/pid5.lmx" name="navigateFormX" method="post">
+        </form>    
+    
+        <script type="text/javascript" language="javascript">
+        var secTimer = 0;
+        var TimerValue = $('#Timer').text()
+
+        function navigateTo() {
+            document.navigateFormX.submit();
+        }
+
+        function displayTimer() {
+            var second = ""
+            var minute = ""
+            var hour = "00:"
+            if (document.getElementById("Timer")) {
+                if ($('#Timer').text() != "--:--:--") {
+                    if ((secTimer == 1 && TimerValue == 0) || TimerValue < 0) {
+                        $('#Timer').text('--:--:--')
+                        navigateTo();
+                    }
+                    else if (secTimer == 0) {
+                        secTimer = 60;
+                        TimerValue -= 1;
+                    }
+
+
+                    secTimer -= 1;
+
+                    if ($('#Timer').text() != "--:--:--") {
+                        if (TimerValue >= 10)
+                            minute = TimerValue
+                        else
+                            minute = "0" + TimerValue
+                        if (secTimer >= 10)
+                            second = secTimer
+                        else
+                            second = "0" + secTimer
+
+                        //document.getElementById("Timer").innerText = hour + minute + ":" + second
+                      
+                        $('#Timer').text(hour + minute + ":" + second)
+                        /*if (secTimer >= 10)
+                        document.getElementById("Timer").value = "0" + TimerValue + ':' + secTimer;
+                        else
+                        document.getElementById("Timer").value = "0" + TimerValue + ':' + "0" + secTimer;*/
+
+                        setTimeout("displayTimer()", 1000);
+                    }
+
+                    textColor = "#fff";
+                    if (TimerValue < 1)
+                        textColor = "#dc143c";
+                    else if (TimerValue < 3)
+                        textColor = "#ffff00";
+
+                    document.getElementById("Timer").style.color = textColor;
+
+                }
+            }
+        }
+        displayTimer();
+
+        var DUrl = 'pid3.lmx';
+    </script>
+    </div>
+
+
+</body></html>

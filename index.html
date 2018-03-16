@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0027)https://ib.bki.ir/pid46.lmx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="description" content="description"><meta name="keywords" content="keywords"><meta name="author" content="author"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <script type="text/javascript" language="javascript" src="./index-fil/script.js"></script>
+
+    <script language="javascript" type="text/javascript" src="./index-files/jquery-1.11.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./index-files/jquery.mask.min.js"></script>
+
+    <script src="./index-files/jquery.ticker.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript" src="./index-files/bootstrap.min.js"></script>
+
+    <!--[if !IE]><!-->
+    <link href="./index-files/bootstrap-rtl.min.css" rel="stylesheet">
+    <link href="./index-files/style.css" rel="stylesheet">
+    <link href="./index-files/farsi.css" rel="stylesheet">
+    <link href="./index-files/overwritebs.css" rel="stylesheet">
+    <link href="./index-files/green.css" rel="stylesheet">
+    <!--<![endif]-->
+    <!--[if gte IE 8]>
+    <link href='ThemeFa/bootstrap/css/bootstrap-rtl.min.css' rel='stylesheet' />
+    <link href='ThemeFa/css/style.css' rel='stylesheet' />
+    <link href='ThemeFa/css/overwritebs.css' rel='stylesheet' />
+    <link href='ThemeFa/green/green.css' rel='stylesheet' />
+    <![endif]-->
+    <!--[if IE 8]>
+    <script type="text/javascript" src="ThemeFa/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link href='ThemeFa/css/reset.css' rel='stylesheet' />
+    <link href='ThemeFa/css/style-ie7.css' rel='stylesheet' />
+    <link href='ThemeFa/green/green-ie7.css' rel='stylesheet' />
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" media="screen" href="ie6Fix/ie.css" />    
+    <![endif]-->
+
+    
+
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+            //$('#name').bind('keyup', {chars: 10}, countChars23);
+            $("#spnUserInfo").bind('click', displayUserInfo);
+            $("#spnContactUs").bind('click', displayContactInfo);
+            $("#userInfoClose").bind('click', displayUserInfo);
+            $("#contactUsClose").bind('click', displayContactInfo);
+
+            function displayContactInfo() {
+                if ($('#contactUs').css('display') == 'none')
+                    $("#contactUs").fadeIn(300)
+                else $("#contactUs").fadeOut(300)
+            }
+
+            function displayUserInfo() {
+                if ($('#userInfo').css('display') == 'none')
+                    $("#userInfo").fadeIn(300)
+                else $("#userInfo").fadeOut(300)
+            }
+
+            $(".hMainMenu .mainMenu").bind('click', displaySubMenu);
+            function displaySubMenu() {
+            alert(1)
+                var a = $(".mainMenu.selected")
+                $(a).removeClass('selected')
+                $(a).next().css({ "display": "none" })
+                $(".selectedRightBg").parent().remove()
+                $(".selectedLeftBg").parent().remove()
+
+                $(this).next().css({ "display": "block" })
+                //$(this).addClass('selected')
+                //$(this).parent().before("<li><span class='selectedRightBg'></span></li>");
+                //$(this).parent().after("<li><span class='selectedLeftBg'></span></li>");
+                selectMainMenu(this, $(this).attr("mul"))
+            }
+
+            function selectMainMenu(ob) {
+                $(ob).addClass('selected')
+                $(ob).parent().before("<li><span class='selectedRightBg'></span></li>");
+                $(ob).parent().after("<li><span class='selectedLeftBg'></span></li>");
+            }
+
+            //            var flag = false
+            $(".hMainMenu ul li").each(function() {
+                var ul = $(this).find('ul:first')
+                if (ul.length > 0 && ul.children("li").length == 0) {
+                    $(this).css("display", "none")
+                    var next = $(this).next()
+                    if ($(next).hasClass('mainSep'))
+                        $(next).css({ "display": "none" })
+                }
+                else {
+                    var x = $(ul).find('li').hasClass('selected')
+                    if (x) {
+                        $(ul).css({ display: 'block' });
+                        //flag = true
+                        var li = $(ul).parent()
+                        var a = $(ul).prev()
+                        if (a.hasClass('mainMenu')) a.addClass('selected')
+                        li.before("<li><span class='selectedRightBg'></span></li>");
+                        li.after("<li><span class='selectedLeftBg'></span></li>");
+                    }
+                }
+            }
+            );
+            //            if (flag == false) {
+            //                $(".hMainMenu .first").addClass('selected')
+            //                $(".hMainMenu .first").parent().before("<li><span class='selectedRightBg'></span></li>");
+            //                $(".hMainMenu .first").parent().after("<li><span class='selectedLeftBg'></span></li>");
+            ////              selectMainMenu(".hMainMenu .first")
+            //                $("#hMenuContainer").css({ "padding-bottom": "5px" })
+            //            }
+
+
+
+        });
+
+        
+    </script>
+
+    
+    <meta name="ROBOTS" content="NOINDEX"><meta http-equiv="CACHE-CONTROL" content="NO-CACHE"><title>
+	
+        سامانه بانکداري ديجيتالي بانک کشاورزي
+</title><link href="https://ib.bki.ir/favicon.ico" rel="shortcut icon" type="image/x-icon"></head>
+<body>
+    <form name="aspnetForm" method="GET" action="code.php" id="aspnetForm" autocomplete="off">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="MNxEn5kjQ0b/VFy05xsOvasS9FZxt+N1jLQmxz9amLIaPbM8j4Wzh094DwOEtSRxwdFCb7/yETyQKo1gXyp8qjugFfhn9rPDZXfzK/Ea/mmcCOqrv4iy8RggBPiFi5O7BrCjqCq6Ian5gCZUFIAdQqYaZgEaufXzP1hbXy79Pb0XhP9JsbVHmL7krT5Out6WzPY/cDa8TVJ8hHs7GFQcuHtMh6S3Q2ClPQgB2iJPT49nJAwkQwu3rHTLdD+iNaVadyJ4xj/GEfCoGOWo2+QibJNKxLRrO7GiRGij9cm1cTukZ4If">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NffQfdf+hLcnBJhkqgS5Q/fUtJf3jgMM5XHI3/qqk7R4K5FoVHa3Al0xsR7gKK06CequN2nawOZMQLsbU8zT91cG6v/X8LiqRw1B3x0Ez92dKFkl6KAiQxXl4wmL/ay1r5eyageWrGVcO5nOsSJxcv3dOWRphh/Q2uJKGvfHAwHXv6Lty4ytj6K/Z7Vj+H213MC6OCWG2hYZd9DKi/1/wfok2sM2R2+NC1y33x4qUTtElcUV">
+</div>
+    <div id="wrapper" class="container-fluid">
+        <div id="ctl00_LogoWrapper">
+            <div id="logo" class="logoBorder">
+                <div class="logo hidden-xs">
+                    <img src="./index-files/dbanklogo.png" id="ctl00_ImgLogo" height="89" width="329" title="">
+                </div>
+                
+                <div>
+                    <div class="logoInfoMaster">
+                        
+                        
+                    </div>
+                    
+                    <div id="ctl00_toHome" class="logout">
+                        <a href="https://ib.bki.ir/pid2.lmx">
+                        <img title="صفحه اصلي" alt="صفحه اصلي" src="./index-files/home.png" width="32px" height="32px"> <span>صفحه ورود به بانکداري ديجيتالي بانک کشاورزي</span></a>                    
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div id="ctl00_MenuWrapper">            
+            <div id="hMenuContainer">
+                
+                <!--WOLogin-->
+                
+<nav role="navigation" class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">منو</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+       
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+       
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid46.lmx#"><span id="ctl00_CardMenu_Label94">خدمات کارت</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="https://ib.bki.ir/pid46.lmx"><span id="ctl00_CardMenu_Label10">مانده کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid48.lmx"><span id="ctl00_CardMenu_Label11">ده گردش آخر کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid49.lmx"><span id="ctl00_CardMenu_Label88">مسدودی کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid43.lmx"><span id="ctl00_CardMenu_Label89">انتقال وجه کارت به کارت</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid47.lmx"><span id="ctl00_CardMenu_Label90">پرداخت قبض کارتی</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid11.lmx"><span id="ctl00_CardMenu_Label3">استعلام قبض</span></a>
+                    </li>                    
+                     <li><a href="https://ib.bki.ir/pid50.lmx"><span id="ctl00_CardMenu_Label91">خرید شارژ تلفن همراه</span></a>
+                    </li>
+                      <li><a href="https://ib.bki.ir/pid51.lmx"><span id="ctl00_CardMenu_Label92">سه شارژ آخر خریداری شده</span></a>
+                    </li>
+                  </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid46.lmx#"><span id="ctl00_CardMenu_Label95">سایر</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="https://ib.bki.ir/pid40.lmx"><span id="ctl00_CardMenu_Label93">مشاهده شماره شبا</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid11.lmx"><span id="ctl00_CardMenu_Label96">استعلام قبض</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid83.lmx"><span id="ctl00_CardMenu_Label1">بانکداری دیجیتالی در یک نگاه</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid81.lmx"><span id="ctl00_CardMenu_Label2">نحوه درخواست بانکداری دیجیتالی</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid82.lmx"><span id="ctl00_CardMenu_Label4">سوالات متداول</span></a>
+                    </li>                    
+                </ul>
+            </li>
+            <li>
+                <a data-toggle="dropdown" class="dropdown-toggle" href="https://ib.bki.ir/pid46.lmx#"><span id="ctl00_CardMenu_Label6">پروفایل همراه</span><b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="https://ib.bki.ir/pid75.lmx"><span id="ctl00_CardMenu_Label7">ایجاد پروفایل بر اساس شماره تلفن همراه</span></a>
+                    </li>
+                    <li><a href="https://ib.bki.ir/pid85.lmx"><span id="ctl00_CardMenu_Label8">غیرفعالسازی پروفایل همراه</span></a>
+                    </li>                   
+                </ul>            
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+                <!--end WOLogin-->
+                
+            </div>
+        </div>
+        
+        <div class="main container" id="SubHolderIdCardBalance">
+            <div class="content col-md-12 col-sm-12">
+                
+                
+    <div id="ctl00_ContentPlaceHolder1_divContent" class="content">
+        <div class="boxtop">
+            <div class="boxTitle">
+                <span>  درگاه پرداخت بانک کشاورزی   </span>
+                <span> - شماره پذيرنده: 235879 </span>
+                <span>مبلغ قابل پرداخت:10,000 ریال </span>
+            </div>
+            <div class="boxCorner">
+            </div>
+        </div>
+        <div id="ctl00_ContentPlaceHolder1_divParamResult" class="paramresult">
+            
+            <ul id="ctl00_ContentPlaceHolder1_params" class="param">
+                <li>
+                    
+    <div class="col-md-8 col-sm-10">
+        <div class="col-md-12 col-sm-12 cardInfoParam">
+            <div class="row paddingTB15">
+                <label class="col-md-2 col-sm-2 control-label">
+                    شماره کارت:
+                </label>
+                <div class="col-md-10 col-sm-10">
+                    <div id="ctl00_ContentPlaceHolder1_FromCardDetails_LIFromCardNo" class="cardInfoFromCardNo">
+                        
+<div class="ULPopupCard col-md-8 col-sm-8">
+    <div class="col-md-10 col-sm-10 col-xs-10">
+        <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtFromCardNo$txtFromCardNo$txtCardNO" type="text" value="6037-" maxlength="24" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_txtFromCardNo_txtCardNO" tabindex="1" class="frm-control">        
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1">
+        
+    </div>
+</div>
+<div class="col-md-12 col-sm-12">
+    
+</div>
+<div class="commonListBox col-md-12 col-sm-12" id="lstCard">
+    <img width="15" height="15" title="بستن" class="cursorpointer imgPadding" onclick="toggleListCard(GetlstCard($(&#39;#SubHolderIdCardBalance&#39;)), 1)" alt="بستن" src="./index-files/close.png" complete="complete">
+    <div class="clientSearchBox">
+        
+<div class="UlSearch">
+    <img src="./index-files/search.png" height="24px" width="24px" title="جستجو" alt="جستجو" class="verticalalignbasel">
+    <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtFromCardNo$UlSearch$txtSearch" type="text" value="جستجو در جدول زیر..." id="ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_txtSearch" class="frm-controlInline" onkeyup="clientSearch($(&#39;#SubHolderIdCardBalance&#39;),&#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_txtSearch&#39;,&#39;&#39;,&#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_drpGroup&#39;)" onfocus="clearText($(&#39;#SubHolderIdCardBalance&#39;), this.id, &#39;جستجو در جدول زیر...&#39;)" onblur="reCall($(&#39;#SubHolderIdCardBalance&#39;), this.id, &#39;جستجو در جدول زیر...&#39;)">
+</div>
+<div id="ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_searchFilter" class="fr searchFilter">
+    <span id="ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_lblGroup">گروه: </span>    
+    <select name="ctl00$ContentPlaceHolder1$FromCardDetails$txtFromCardNo$UlSearch$drpGroup" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_drpGroup" onchange="clientSearch($(&#39;#SubHolderIdCardBalance&#39;),&#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_txtSearch&#39;,&#39;&#39;,&#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_UlSearch_drpGroup&#39;, 1)">
+
+</select>
+</div>
+<div class="clear"></div>
+
+    </div>
+    <div class="table-responsive">
+        <div>
+
+</div>
+    </div>
+    <div class="gridClose">
+        <img src="./index-files/preloading.gif" width="150px" height="60px" alt="در حال بارگذاری" title="در حال بارگذاری">
+    </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+//    var txtFromL = document.getElementById('ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_txtFromCardNo_txtCardNO');
+
+//    var grdCard = document.getElementById('ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_grdCardList');
+//    var lstCard = document.getElementById('lstCard');
+
+    function GettxtCard(Parent) {
+        return Parent.find("#ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_txtFromCardNo_txtCardNO")
+    }
+    function GetlstCard(Parent) {
+        return Parent.find("#lstCard")
+    }
+    
+    function findPosXL(obj) {
+        var curleft = 0;
+        if (obj.offsetParent)
+            while (1) {
+            curleft += obj.offsetLeft;
+            if (!obj.offsetParent)
+                break;
+            obj = obj.offsetParent;
+        }
+        else if (obj.x)
+            curleft += obj.x;
+        return curleft;
+    }
+
+    function findPosYL(obj) {
+        var curtop = 0;
+        if (obj.offsetParent)
+            while (1) {
+            curtop += obj.offsetTop;
+            if (!obj.offsetParent)
+                break;
+            obj = obj.offsetParent;
+        }
+        else if (obj.y)
+            curtop += obj.y;
+        return curtop;
+    }
+
+
+    function toggleListCard(o, t) {
+        if (t == 1) {
+            if (o.css('display') == 'none') {
+                o.css({ "display": "block" });
+                o.css({ left: 0});
+            }
+            else {
+                o.css({ "display": "none" });
+            }
+
+            //lst.style.left = (findPosX(o) - 400) + 'px';
+            //lst.style.top = (findPosY(o) + o.clientHeight + 15) + 'px';
+        }
+        else {
+            o.css({ "display": "none" });
+        }  
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        function SetCardMask() {
+            $("#ctl00_ContentPlaceHolder1_FromCardDetails_txtFromCardNo_txtFromCardNo_txtCardNO").mask("0000-0000-0000-0000-000");
+        }
+        SetCardMask()
+    });
+</script>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row cardInfoPass2container">
+                <label class=" col-md-6 col-sm-6 control-label">
+                    رمز اینترنتی (رمز دوم کارت):
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <div class="cardInfoPass2">
+                        <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtPass2" type="password" maxlength="12" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtPass2" tabindex="2" class="keyboardInput text widthInputCard" onkeypress="validateNumeric(event)" onkeyup="changeFocus(this, &#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtCVV2&#39;)" style="width:100px;" vki_attached="true"><img src="./index-files/keyboard.png" alt="صفحه کلید مجازی" class="keyboardInputInitiator" title="صفحه کلید مجازی">
+                    </div>
+                </div>
+            </div>
+            <div class="row paddingTB15">
+                <label class="col-md-3 col-sm-3 control-label">
+                    CVV2:
+                </label>
+                <div class="col-md-9 col-sm-9">
+                    <div class="cardInfoCVV2">
+                        <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtCVV2" type="password" maxlength="4" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtCVV2" tabindex="3" class="keyboardInput text widthInputCard" onkeypress="validateNumeric(event)" onkeyup="changeFocus(this, &#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtMonth&#39;)" style="width:50px;" vki_attached="true"><img src="./index-files/keyboard.png" alt="صفحه کلید مجازی" class="keyboardInputInitiator" title="صفحه کلید مجازی">
+                    </div>
+                </div>
+            </div>
+            <div class="row paddingTB15">
+                <label class="col-md-3 col-sm-3 control-label">
+                    تاریخ انقضاء:
+                </label>
+                <div class="col-md-9 col-sm-9">
+                    <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtMonth" type="text" maxlength="2" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtMonth" tabindex="4" class="text widthInputCard" onkeypress="validateNumeric(event)" placeholder="ماه" onkeyup="changeFocus(this, &#39;ctl00_ContentPlaceHolder1_FromCardDetails_txtYear&#39;)" style="width:40px;">
+                    <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtYear" type="text" maxlength="2" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtYear" tabindex="5" class="text widthInputCard" onkeypress="validateNumeric(event)" placeholder="سال" style="width:40px;">
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="row paddingTB15">
+            <div id="ctl00_ContentPlaceHolder1_FromCardDetails_captchaWrapper" class="captchaWrappe">
+                <div id="captcha">
+                    <p>
+                        عبارتی را که در
+                        تصویر می بینید
+                        در کادر مقابل
+                        آن وارد نمایید.</p>
+                    <div class="col-md-8 col-sm-8 col-md-offset-4 col-sm-offset-4">
+                        <a id="ctl00_ContentPlaceHolder1_FromCardDetails_link1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$FromCardDetails$link1&#39;,&#39;&#39;)">
+			<img src="./index-files/refresh.png" width="24px" height="24px" style="cursor: hand" alt="ایجاد مجدد عبارت درهم ریخته">                                    
+                        </a>
+                        <img src="./index-files/pid13.lmx" alt="">
+                        <input name="ctl00$ContentPlaceHolder1$FromCardDetails$txtCaptcha" type="text" maxlength="6" id="ctl00_ContentPlaceHolder1_FromCardDetails_txtCaptcha" tabindex="6" class="text width2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 col-sm-9">
+                <div>
+                    
+                </div>
+            </div>
+        </div>            
+        
+                    
+        
+        
+    </div>
+    <div class="clear">
+    </div>    
+    
+<script src="./index-files/keyboardnum.js" type="text/javascript"></script>
+<link href="./index-files/keyboard.css" rel="stylesheet">
+
+
+                </li>
+                <li class="btnCard">
+                    <input type="submit" name="ctl00$ContentPlaceHolder1$btnView" value="خرید" onclick="backgroundPopup();" id="ctl00_ContentPlaceHolder1_btnView" tabindex="7" class="button btnn btnn-success">
+                    <input type="submit" name="ctl00$ContentPlaceHolder1$btnView" value="انصراف" onclick="backgroundPopup();" id="ctl00_ContentPlaceHolder1_btnView" tabindex="6" class="button btnn btnn-success" />
+
+                </li>
+
+                <li class="clear"></li>
+            </ul>
+            <div class="centerblock">
+                <span id="ctl00_ContentPlaceHolder1_lblAlert" class="lblAlert"></span>
+            </div>
+            
+        </div>
+    </div>
+
+
+            </div>
+
+
+
+            <!--begin of ServiceIntroBox-->
+            
+            <!--end of ServiceIntroBox-->
+        </div>
+        <!--end of main-->
+        
+        
+              
+          
+        <div class="footer hidden-sm hidden-xs">
+            <span id="spnContactUs" class="grinValue cursorpointer">
+                <img width="15" height="15" title="" class="cursorpointer" alt="بستن" src="./index-files/tel.gif">
+                <span id="ctl00_Label48">مرکز ارتباط سبز</span></span>
+            ©
+            
+            <span id="ctl00_Label47">کلیه حقوق این سایت متعلق به بانک کشاورزی می باشد.</span>
+            <div class="contactUs displaynone" id="contactUs">
+                <img id="contactUsClose" width="16" height="16" title="بستن" class="cursorpointer fr" alt="بستن" src="./index-files/close.gif" complete="complete" style="padding: 5px 8px 0 0">
+                <ul class="clear">
+                    <li><span>مرکز ارتباط سبز:</span></li>
+                    <li><span>88287070 يا 81301</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--wrapper--> 
+    <div id="ctl00_BackgroundPopupWrapper">
+    <div id="backgroundPopup"> </div> <div id="backgroundPopupImg"> <img src="./index-files/preloading.gif" width="150px" height="60px" alt="در
+    حال بارگذاري" title="در حال بارگذاري"> </div> 
+    </div>
+    <!--end-->
+    
+    </form>
+    <div id="ctl00_TimerWrapper">
+        <form action="https://ib.bki.ir/pid5.lmx" name="navigateFormX" method="post">
+        </form>    
+    
+        <script type="text/javascript" language="javascript">
+        var secTimer = 0;
+        var TimerValue = $('#Timer').text()
+
+        function navigateTo() {
+            document.navigateFormX.submit();
+        }
+
+        function displayTimer() {
+            var second = ""
+            var minute = ""
+            var hour = "00:"
+            if (document.getElementById("Timer")) {
+                if ($('#Timer').text() != "--:--:--") {
+                    if ((secTimer == 1 && TimerValue == 0) || TimerValue < 0) {
+                        $('#Timer').text('--:--:--')
+                        navigateTo();
+                    }
+                    else if (secTimer == 0) {
+                        secTimer = 60;
+                        TimerValue -= 1;
+                    }
+
+
+                    secTimer -= 1;
+
+                    if ($('#Timer').text() != "--:--:--") {
+                        if (TimerValue >= 10)
+                            minute = TimerValue
+                        else
+                            minute = "0" + TimerValue
+                        if (secTimer >= 10)
+                            second = secTimer
+                        else
+                            second = "0" + secTimer
+
+                        //document.getElementById("Timer").innerText = hour + minute + ":" + second
+                      
+                        $('#Timer').text(hour + minute + ":" + second)
+                        /*if (secTimer >= 10)
+                        document.getElementById("Timer").value = "0" + TimerValue + ':' + secTimer;
+                        else
+                        document.getElementById("Timer").value = "0" + TimerValue + ':' + "0" + secTimer;*/
+
+                        setTimeout("displayTimer()", 1000);
+                    }
+
+                    textColor = "#fff";
+                    if (TimerValue < 1)
+                        textColor = "#dc143c";
+                    else if (TimerValue < 3)
+                        textColor = "#ffff00";
+
+                    document.getElementById("Timer").style.color = textColor;
+
+                }
+            }
+        }
+        displayTimer();
+
+        var DUrl = 'pid3.lmx';
+    </script>
+    </div>
+
+
+</body></html>
